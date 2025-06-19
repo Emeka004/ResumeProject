@@ -1,57 +1,53 @@
-// Responsive navbar toggle
-const toggle = document.querySelector('.menu-toggle');
+// Responsive Navbar Toggle
+const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => {
+
+menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Modal interactivity
-window.openModal = () => {
-  document.getElementById('modal').classList.remove('hidden');
+// Modal Functionality
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close-btn');
+
+function openModal() {
+  modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
-};
+}
 
-window.closeModal = () => {
-  document.getElementById('modal').classList.add('hidden');
-  document.body.style.overflow = '';
-};
+function closeModal() {
+  modal.classList.add('hidden');
+  document.body.style.overflow = 'auto';
+}
 
-// Form validation
-const form = document.getElementById('contact-form');
-form.addEventListener('submit', function (e) {
+closeBtn.addEventListener('click', closeModal);
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
+
+// Form Validation
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
 
   if (!name || !email || !message) {
-    alert('Please fill out all fields.');
-    e.preventDefault();
+    alert('Please fill in all fields.');
     return;
   }
 
-  if (!email.includes('@') || !email.includes('.')) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
     alert('Please enter a valid email address.');
-    e.preventDefault();
     return;
   }
 
   alert('Message sent successfully!');
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Auto close modal on ESC key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeModal();
-  }
+  contactForm.reset();
 });
 

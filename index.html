@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emeka Onugha | Resume</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Emeka | Resume</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <nav id="navbar">
-      <ul>
+    <nav class="navbar">
+      <div class="logo">Emeka</div>
+      <button class="menu-toggle" aria-label="Toggle menu" type="button">☰</button>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -18,30 +21,90 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <h1>Emeka Onugha</h1>
-    <p>Front-End Developer | All Around Tech</p>
   </header>
 
   <main>
-    <section id="about">...</section>
-    <section id="skills">...</section>
-    <section id="experience">...</section>
-    <section id="education">...</section>
-    <section id="projects">...</section>
+    <section class="hero">
+      <h1>Hello, I'm Emeka</h1>
+      <p>Web Developer | Problem Solver | Creative Thinker</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a passionate developer with a background in building responsive web apps using HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Responsive Design</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Frontend Developer Intern – XYZ Company</h3>
+        <p>June 2024 – December 2024</p>
+        <ul>
+          <li>Worked on UI components using HTML, CSS, JS</li>
+          <li>Improved mobile responsiveness across platforms</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>BSc in Computer Science</h3>
+        <p>University of Rwanda, 2021 – 2025</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <img src="assets/project1.png" alt="Screenshot of Project 1">
+        <h3>Responsive Portfolio</h3>
+        <p>Built a personal portfolio site with responsive design and interactive features.</p>
+        <button type="button" onclick="openModal()">View More</button>
+      </div>
+    </section>
+
     <section id="contact">
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Personal Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>&copy; 2025 Emeka. All rights reserved.</p>
   </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" type="button" onclick="closeModal()">&times;</button>
+      <h3>Project Details</h3>
+      <p>Here’s more detail about the project and technologies used...</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+

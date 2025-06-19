@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Emeka | Resume</title>
+  <title>Emeka | Web Developer</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -25,86 +26,97 @@
 
   <main>
     <section class="hero">
-      <h1>Hello, I'm Emeka</h1>
-      <p>Web Developer | Problem Solver | Creative Thinker</p>
+      <div class="hero-content">
+        <h1>Hello, I'm <span>Emeka</span></h1>
+        <p>Web Developer | Problem Solver | Creative Thinker</p>
+        <a href="#contact" class="btn-primary">Let's Connect</a>
+      </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="section">
       <h2>About Me</h2>
-      <p>I'm a passionate developer with a background in building responsive web apps using HTML, CSS, and JavaScript.</p>
+      <p>I'm a passionate developer with a background in building responsive web apps using HTML, CSS, and JavaScript. I love crafting interactive and accessible web solutions with a focus on user experience.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="section">
       <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript (ES6+)</li>
-        <li>Responsive Design</li>
-        <li>Git & GitHub</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skill-card">HTML5</div>
+        <div class="skill-card">CSS3</div>
+        <div class="skill-card">JavaScript (ES6+)</div>
+        <div class="skill-card">Responsive Design</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">UI/UX Principles</div>
+      </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="section">
       <h2>Experience</h2>
       <div class="experience-item">
         <h3>Frontend Developer Intern – XYZ Company</h3>
-        <p>June 2024 – December 2024</p>
+        <span class="date">June 2024 – December 2024</span>
         <ul>
-          <li>Worked on UI components using HTML, CSS, JS</li>
-          <li>Improved mobile responsiveness across platforms</li>
+          <li>Worked on UI components using semantic HTML, modular CSS, and vanilla JavaScript</li>
+          <li>Improved mobile responsiveness and accessibility</li>
+          <li>Participated in Agile sprint planning and code reviews</li>
         </ul>
       </div>
     </section>
 
-    <section id="education">
+    <section id="education" class="section">
       <h2>Education</h2>
       <div class="education-item">
-        <h3>BSc in Computer Science</h3>
-        <p>University of Rwanda, 2021 – 2025</p>
+        <h3>University of Rwanda</h3>
+        <p>BSc in Computer Science, 2021 – 2025</p>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="project">
         <img src="assets/project1.png" alt="Screenshot of Project 1">
-        <h3>Responsive Portfolio</h3>
-        <p>Built a personal portfolio site with responsive design and interactive features.</p>
-        <button type="button" onclick="openModal()">View More</button>
+        <div class="project-details">
+          <h3>Responsive Portfolio</h3>
+          <p>Built a responsive personal portfolio with animations, smooth scrolling, and modal functionality using pure HTML, CSS, and JavaScript.</p>
+          <button type="button" class="btn-secondary" onclick="openModal()">View More</button>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section">
       <h2>Contact Me</h2>
       <form id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Send Message</button>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Emeka. All rights reserved.</p>
+    <p>&copy; 2025 Emeka. Designed and developed with passion.</p>
   </footer>
 
   <div id="modal" class="modal hidden">
     <div class="modal-content">
       <button class="close-btn" type="button" onclick="closeModal()">&times;</button>
       <h3>Project Details</h3>
-      <p>Here’s more detail about the project and technologies used...</p>
+      <p>This portfolio project includes a fully responsive layout, modal interactions, smooth scrolling, and stylish presentation using only HTML, CSS, and JavaScript.</p>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
